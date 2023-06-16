@@ -1,0 +1,183 @@
+# Ansible Hosts File for Lab 
+
+[IOSXR]
+BBR01WTSACC	ansible_host=10.92.48.100					
+BBR02WTSACC	ansible_host=10.92.48.101
+				
+[IOSXR_TAC]
+DMK01WTSCCC     ansible_host=10.92.48.40
+DMK02WTSCCC     ansible_host=10.92.48.41
+
+[IOSSWITCHES]
+DSW04WTSCCC	ansible_host=10.92.48.107
+VPN03WTSCCC ansible_host=10.92.48.80
+VPN04WTSCCC ansible_host=10.92.48.81
+
+[IOSXE_TAC]
+DSW01VCSIIWT	ansible_host=10.92.0.16
+DSW03VCSII02WT	ansible_host=10.92.0.14
+DSW04VCSIIWT	ansible_host=10.92.0.4
+DSW05VCSIIWT	ansible_host=10.92.0.5
+DSW06VCSIIWT	ansible_host=10.92.0.6
+DSW07VCSII02WT	ansible_host=10.92.0.15
+DSW08VCSIIWT	ansible_host=10.92.0.8
+DSW09VCSIIWT	ansible_host=10.92.0.9
+DSW10VCSIIWT	ansible_host=10.92.0.10
+DSW11VCSIIWT	ansible_host=10.92.0.11
+DSW12VCSII01WT	ansible_host=10.15.4.112
+DSW20VCSIIWT	ansible_host=10.15.4.120
+DSW41WTSACC-FG1-SR21	ansible_host=10.92.6.134
+DSW42WTSACC ansible_host=10.17.4.11
+DSW46WTSACC-FG1-SR11	ansible_host=10.92.6.136
+DSW47WTSACC-FG1-SR11	ansible_host=10.92.6.137
+FGI04WTDSW02-WDE-C9300	ansible_host=10.92.3.2
+FGI04WTDSW09-IDF	ansible_host=10.92.4.5
+FGI04WTFW01-WDE	ansible_host=10.92.3.2
+FGI04WTDSW11-SIT       ansible_host=10.92.3.9
+
+[NXOS_TAC]
+BLP01WTSCCC	ansible_host=172.31.17.167
+BLP02WTSCCC	ansible_host=172.31.17.168
+DCL06WTSCCC     ansible_host=10.92.48.79
+DCR03WTSCCC	ansible_host=172.31.17.150
+DCR04WTSACC	ansible_host=10.92.3.8
+DCR09WTSACC	ansible_host=96.34.201.169
+DCR10WTSACC	ansible_host=96.34.201.170
+DCR41WTSACC-CPE	ansible_host=10.92.32.1
+DCR42WTSCACC-FG1-IDFC	ansible_host=172.31.9.2
+DSW03VCSII01WT	ansible_host=10.92.0.3
+DSW07VCSII01WT	ansible_host=10.92.0.7
+DSW12VCSII02WT	ansible_host=10.92.0.13
+DSW13WTSCCC     ansible_host=10.92.48.103
+DSW14WTSCCC     ansible_host=10.92.48.104
+DSW43WTSACC-FG1-SR12	ansible_host=10.92.6.133
+DSW44WTSACC-FG1-SR4	ansible_host=10.92.6.132
+DSW48WTSACC-FG1-SR22	ansible_host=10.92.6.138
+ELF01WTSACC     ansible_host=10.92.48.62
+ELF02WTSACC     ansible_host=10.92.48.63
+ELF11WTSACC-EC  ansible_host=10.92.148.4
+ELF12WTSACC-EC  ansible_host=10.92.148.5
+ELF21WTSACC-EC	ansible_host=10.92.152.4
+ELF22WTSACC-EC	ansible_host=10.92.152.5
+FGI04WTDSW01-R&D	ansible_host=10.92.3.3
+FGI04WTDSW05-SIT	ansible_host=10.92.3.5
+FGI04WTDSW06-SIT	ansible_host=10.92.3.6
+FGI04WTDSW07-SIT	ansible_host=10.92.3.7
+FLP01WTSCCC	ansible_host=10.92.48.10
+FLP02WTSCCC	ansible_host=10.92.48.11
+FLP02WTSCCC	ansible_host=10.92.48.11
+FLP03WTSACC	ansible_host=10.92.48.12
+FLP04WTSACC	ansible_host=10.92.48.13
+LFS01WTSACC	ansible_host=10.92.48.64
+LFS02WTSACC	ansible_host=10.92.48.65
+LFS03WTSACC	ansible_host=10.92.48.66
+LFS04WTSACC	ansible_host=10.92.48.67
+LFS05WTSACC	ansible_host=10.92.48.68
+LFS06WTSACC	ansible_host=10.92.48.69
+LFS07WTSACC	ansible_host=10.92.48.71
+LFS08WTSACC	ansible_host=10.92.48.70
+LFS11WTSACC-EC  ansible_host=10.92.148.8
+LFS12WTSACC-EC  ansible_host=10.92.148.9
+LFS21WTSACC-EC  ansible_host=10.92.152.8
+LFS22WTSACC-EC  ansible_host=10.92.152.9
+MGMT11WTSACC-EC ansible_host=172.31.9.34
+MGMT12WTSACC-EC ansible_host=172.31.9.35
+NGSP01WTSACC	ansible_host=10.92.48.60
+NGSP02WTSACC	ansible_host=10.92.48.61
+SPN02WTSACC	ansible_host=172.31.17.162
+SPN05WTSACC-EC  ansible_host=10.92.148.6
+SPN06WTSACC-EC  ansible_host=10.92.148.7
+SPN07WTSACC-EC  ansible_host=10.92.152.6
+SPN08WTSACC-EC  ansible_host=10.92.152.7
+ToR01WTSACC	ansible_host=10.92.80.2
+ToR02WTSACC	ansible_host=10.92.80.3
+ToR03WTSACC     ansible_host=10.92.80.4
+ToR04WTSACC     ansible_host=10.92.80.5
+ToR05WTSACC	ansible_host=10.92.48.46
+ToR06WTSACC	ansible_host=10.92.48.47
+
+
+[NXOS]
+SSR01WTSACC	ansible_host=10.92.48.74					
+SSR02WTSACC	ansible_host=10.92.48.75					
+LFS05WTSACC	ansible_host=10.92.48.68					
+LFS06WTSACC	ansible_host=10.92.48.69					DCR31WTSCCC	ansible_host=10.12.12.1						
+DSW31WTSCCC	ansible_host=10.12.12.5						
+DSW32WTSCCC	ansible_host=10.12.12.6						
+DSW33WTSCCC	ansible_host=10.12.12.7						
+DSW34WTSCCC	ansible_host=10.12.12.8						
+DSW35WTSCCC	ansible_host=10.12.12.9						
+DSW36WTSCCC	ansible_host=10.12.12.10					DSW37WTSCCC	ansible_host=10.12.12.11
+DSW38WTSCCC	ansible_host=10.12.12.12			
+DSW39WTSCCC	ansible_host=10.12.12.14					ToR01WTSACC	ansible_host=10.92.80.2						
+ToR02WTSACC	ansible_host=10.92.80.3						
+ToR05WTSACC	ansible_host=10.92.48.46					
+ToR06WTSACC	ansible_host=10.92.48.47	
+DSW09WTSCCC	ansible_host=10.0.4.108						
+ELF01WTSACC	ansible_host=10.92.48.62					ELF02WTSACC	ansible_host=10.92.48.63
+LFS01WTSACC	ansible_host=10.92.48.64
+LFS02WTSACC	ansible_host=10.92.48.65					
+LFS03WTSACC	ansible_host=10.92.48.66	
+LFS04WTSACC	ansible_host=10.92.48.67
+LFS05WTSACC	ansible_host=10.92.48.68
+LFS06WTSACC	ansible_host=10.92.48.69					
+FLP03WTSACC	ansible_host=10.92.48.12					
+FLP04WTSACC	ansible_host=10.92.48.13					
+FLP01WTSCCC	ansible_host=172.31.17.163					
+FLP02WTSCCC	ansible_host=172.31.17.164	
+ELP01WTSACC	ansible_host=10.0.4.240						
+ELP02WTSACC	ansible_host=10.0.4.241
+DSW01WTSCCC ansible_host=10.92.48.20						
+DSW02WTSCCC ansible_host=10.92.48.21						
+DSWEIDFWTSCCC ansible_host=10.0.4.115
+DSW01WTSACC	ansible_host=10.92.48.20	
+DCR04WTSACC	ansible_host=10.15.4.98						
+DCL04WTSCCC	ansible_host=10.0.117.7						
+DCL03WTSCCC	ansible_host=10.0.117.6						
+DCR05WTSCCC	ansible_host=10.92.48.105					
+DCR06WTSCCC	ansible_host=10.92.48.106					
+DCR07WTSCCC	ansible_host=172.31.17.155					DCR08WTSCCC	ansible_host=172.31.17.156				
+DSW12WTSACC	ansible_host=10.1.4.12						
+DTR09WTSCCC	ansible_host=172.31.17.140					DTR10WTSCCC	ansible_host=172.31.17.141
+
+
+[NXOS_WTG]	
+BLP01WTSACC ansible_host=172.31.17.167
+BLP02WTSACC ansible_host=172.31.17.168
+SPN01WTSACC	ansible_host=172.31.17.161					SPN02WTSACC	ansible_host=172.31.17.162
+
+[EXTREME]
+
+[FORTINET]										
+BFW01WTSACC ansible_host=10.0.4.200
+
+[JUNOS]
+MFW01WTSACC ansible_host=10.22.16.12
+
+[JUNOSNGDC]
+DFW01WTSACC ansible_host=10.0.4.242
+
+
+[FORTINET]
+BFW01WTSACC ansible_host=10.0.4.200 
+
+
+[bigip]
+BIG-IP-1-V ansible_host=192.168.1.x
+
+[WLC]
+WLC-1 ansible_host=192.168.1.x
+
+[ASA]
+FWL01WTSCCC ansible_host=96.37.190.243
+
+[SD_WAN]
+vManage ansible_host=192.168.x
+vSmart ansible_host=192.168.1.x 
+vBond ansible_host=192.168.1.x
+
+[ACI_Sandbox]
+sandboxapicdc.cisco.com
+
+[palo]
+PA-1 ansible_host=192.168.1.x

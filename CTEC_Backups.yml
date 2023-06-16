@@ -1,0 +1,146 @@
+- hosts: localhost
+
+  tasks:
+   - name: Get ansible date/time facts
+     setup:
+       filter: "ansible_date_time"
+       gather_subset: "!all"
+
+   - name: Store DTG as fact
+     set_fact:
+       DTG: "{{ ansible_date_time.date }}"
+
+   - local_action: command mkdir -p /etc/ansible/backups/{{hostvars.localhost.DTG}}
+
+   - local_action: command mkdir -p /etc/ansible/backup-tac/{{hostvars.localhost.DTG}}	
+
+- hosts: NGFW
+  tasks:
+    - asa_command:
+        commands:
+          - sho run
+      register: config
+
+    - copy:
+       content: "{{ config.stdout[0] }}"
+       dest:/etc/ansible/Backups/{{ inventory_hostname }}/backup_{{ inventory_hostname }}_{{hostvars.localhost.DTG}}.txt
+
+- hosts: NXOS_TAC
+  tasks:
+   - name: Save configuration
+     cli_command:
+       command: copy running-config startup-config
+
+   - name: Backup NEXUS with cli_command
+     cli_command:
+       command: show run | be ver
+     register: config
+
+   - name: Save output to /etc/ansible/backup-tac/
+     copy:
+       content: "{{config.stdout}}"
+       dest: "/etc/ansible/backup-tac/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+
+
+- hosts: IOSXE_TAC
+
+  tasks:
+   - name: Save-IOS-Configuration
+     ios_config:
+       running_config:
+       save_when: always
+       backup: yes
+       backup_options:
+         filename: "{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+         dir_path: /etc/ansible/backups/{{hostvars.localhost.DTG}}
+
+
+- hosts: IOSSWITCHES
+
+  tasks:
+   - name: Save-IOS-Configuration
+     ios_config:
+       running_config:
+       save_when: always
+       backup: yes
+       backup_options:
+         filename: "{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+         dir_path: /etc/ansible/backups/{{hostvars.localhost.DTG}}
+  
+
+ #  - name: BackupIOSSwitch 
+ #    ios_config:
+  #     backup: yes
+  #     backup_options:
+  #       filename: "{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+  #       dir_path: /etc/ansible/backups/{{hostvars.localhost.DTG}}
+         
+- hosts: IOSXR
+
+  tasks:
+   - name: Save Conguration
+     iosxr_config:
+       backup: yes
+
+   - name: Backup  
+     ios_command:
+       commands: show run  
+     register: config
+
+   - name: Save output to etc/ansible/backups/
+     copy:
+       content: "{{config.stdout[0]}}"
+       dest: "/etc/ansible/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+       
+       
+- hosts: IOSXR_TAC
+
+  tasks:
+   - name: Save Conguration
+     iosxr_config:
+       backup: yes
+
+   - name: Backup  
+     ios_command:
+       commands: show run  
+     register: config
+
+   - name: Save output to etc/ansible/backups/
+     copy:
+       content: "{{config.stdout[0]}}"
+       dest: "/etc/ansible/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+
+       
+- hosts: EXTREME
+
+  tasks:
+   - name: BackupExtreme 
+     exos_config:
+       running_config:
+       save_when: always
+       backup: yes
+       backup_options:
+         filename: "{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+         dir_path: /etc/ansible/backups/{{hostvars.localhost.DTG}}
+         
+    
+- hosts: JUNOS
+
+  tasks:
+   - name: BackupJUNOS
+     junos_config:
+       backup: yes
+       backup_options:
+         filename: "{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+         dir_path: /etc/ansible/backups/{{hostvars.localhost.DTG}}
+
+
+- hosts: JUNOSNGDC
+
+  tasks:
+   - name: BackupJUNOS
+     junos_config:
+       backup: yes
+       backup_options:
+         filename: "{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+         dir_path: /etc/ansible/backups/{{hostvars.localhost.DTG}}

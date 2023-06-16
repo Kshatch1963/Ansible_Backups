@@ -1,0 +1,438 @@
+[admin@ans01wtsccc ansible]$ ansible-playbook CTEC_Backups.yml
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+PLAY [localhost] ***************************************************************************************************************************
+
+TASK [Get ansible date/time facts] *********************************************************************************************************
+ok: [localhost]
+
+TASK [Store DTG as fact] *******************************************************************************************************************
+ok: [localhost]
+
+TASK [command] *****************************************************************************************************************************
+changed: [localhost -> localhost]
+
+TASK [command] *****************************************************************************************************************************
+changed: [localhost -> localhost]
+
+PLAY [NXOS] ********************************************************************************************************************************
+
+TASK [Save configuration] ******************************************************************************************************************
+ok: [SSR02WTSACC]
+ok: [SSR01WTSACC]
+ok: [DSW36WTSCCC]
+ok: [DSW31WTSCCC]
+ok: [DSW37WTSCCC]
+ok: [LFS06WTSACC]
+ok: [DSW39WTSCCC]
+ok: [LFS05WTSACC]
+ok: [DSW09WTSCCC]
+ok: [DSW33WTSCCC]
+ok: [DCR31WTSCCC]
+ok: [DSW32WTSCCC]
+ok: [DSW38WTSCCC]
+ok: [DSW34WTSCCC]
+ok: [DSW35WTSCCC]
+ok: [ToR01WTSACC]
+ok: [ToR02WTSACC]
+ok: [ELF01WTSACC]
+ok: [ToR05WTSACC]
+ok: [ToR06WTSACC]
+ok: [ELF02WTSACC]
+ok: [LFS01WTSACC]
+ok: [LFS02WTSACC]
+ok: [ELP01WTSACC]
+ok: [LFS04WTSACC]
+ok: [LFS03WTSACC]
+ok: [DCR04WTSACC]
+ok: [DSWEIDFWTSCCC]
+ok: [ELP02WTSACC]
+ok: [FLP04WTSACC]
+ok: [DSW01WTSACC]
+ok: [FLP03WTSACC]
+ok: [DCL04WTSCCC]
+ok: [DCR07WTSCCC]
+ok: [DCR06WTSCCC]
+ok: [DCR05WTSCCC]
+ok: [DCL03WTSCCC]
+ok: [DCR08WTSCCC]
+ok: [DSW01WTSCCC]
+ok: [DSW12WTSACC]
+ok: [DSW02WTSCCC]
+ok: [DTR09WTSCCC]
+ok: [DTR10WTSCCC]
+ok: [FLP02WTSCCC]
+ok: [FLP01WTSCCC]
+fatal: [DCL06WTSCCC]: FAILED! => {"changed": false, "msg": "timed out"}
+
+TASK [Backup NEXUS with cli_command] *******************************************************************************************************
+ok: [SSR02WTSACC]
+ok: [SSR01WTSACC]
+ok: [LFS06WTSACC]
+ok: [DSW35WTSCCC]
+ok: [DSW33WTSCCC]
+ok: [DCR31WTSCCC]
+ok: [DSW36WTSCCC]
+ok: [DSW31WTSCCC]
+ok: [LFS05WTSACC]
+ok: [DSW34WTSCCC]
+ok: [DSW32WTSCCC]
+ok: [ToR05WTSACC]
+ok: [DSW09WTSCCC]
+ok: [ToR02WTSACC]
+ok: [DSW39WTSCCC]
+ok: [DSW38WTSCCC]
+ok: [DSW37WTSCCC]
+ok: [ELF01WTSACC]
+ok: [ToR01WTSACC]
+ok: [ToR06WTSACC]
+ok: [ELF02WTSACC]
+ok: [LFS02WTSACC]
+ok: [LFS01WTSACC]
+ok: [LFS03WTSACC]
+ok: [FLP03WTSACC]
+ok: [LFS04WTSACC]
+ok: [ELP01WTSACC]
+ok: [FLP04WTSACC]
+ok: [DSWEIDFWTSCCC]
+ok: [ELP02WTSACC]
+ok: [DCR06WTSCCC]
+ok: [DCL03WTSCCC]
+ok: [DCR04WTSACC]
+ok: [DCL04WTSCCC]
+ok: [FLP01WTSCCC]
+ok: [DCR05WTSCCC]
+ok: [DSW02WTSCCC]
+ok: [FLP02WTSCCC]
+ok: [DSW01WTSCCC]
+ok: [DCR08WTSCCC]
+ok: [DCR07WTSCCC]
+ok: [DSW12WTSACC]
+ok: [DTR10WTSCCC]
+ok: [DTR09WTSCCC]
+ok: [DSW01WTSACC]
+
+TASK [Save output to /etc/ansible/backups/] ************************************************************************************************
+changed: [ToR01WTSACC]
+changed: [DSW38WTSCCC]
+changed: [SSR01WTSACC]
+changed: [ToR05WTSACC]
+changed: [LFS05WTSACC]
+changed: [DSW37WTSCCC]
+changed: [DSW33WTSCCC]
+changed: [ELF01WTSACC]
+changed: [LFS03WTSACC]
+changed: [DCR31WTSCCC]
+changed: [DSW32WTSCCC]
+changed: [FLP02WTSCCC]
+changed: [ELP01WTSACC]
+changed: [ELP02WTSACC]
+changed: [DSW34WTSCCC]
+changed: [DSW09WTSCCC]
+changed: [DSW02WTSCCC]
+changed: [SSR02WTSACC]
+changed: [DSW35WTSCCC]
+changed: [LFS06WTSACC]
+changed: [ToR06WTSACC]
+changed: [DCR04WTSACC]
+changed: [DCL04WTSCCC]
+changed: [DSW31WTSCCC]
+changed: [DSW36WTSCCC]
+changed: [DCR08WTSCCC]
+changed: [DSW12WTSACC]
+changed: [DTR09WTSCCC]
+changed: [ToR02WTSACC]
+changed: [DTR10WTSCCC]
+changed: [DSW39WTSCCC]
+changed: [FLP03WTSACC]
+changed: [ELF02WTSACC]
+changed: [FLP01WTSCCC]
+changed: [LFS01WTSACC]
+changed: [LFS02WTSACC]
+changed: [DSWEIDFWTSCCC]
+changed: [LFS04WTSACC]
+changed: [DCL03WTSCCC]
+changed: [DSW01WTSACC]
+changed: [FLP04WTSACC]
+changed: [DSW01WTSCCC]
+changed: [DCR05WTSCCC]
+changed: [DCR07WTSCCC]
+changed: [DCR06WTSCCC]
+
+PLAY [NXOS-WTG] ****************************************************************************************************************************
+
+TASK [Save configuration] ******************************************************************************************************************
+ok: [BLP01WTSACC]
+ok: [BLP02WTSACC]
+ok: [SPN01WTSACC]
+ok: [SPN02WTSACC]
+fatal: [ToR03WTSACC]: FAILED! => {"changed": false, "msg": "Failed to authenticate: Authentication failed."}
+fatal: [ToR04WTSACC]: FAILED! => {"changed": false, "msg": "Failed to authenticate: Authentication failed."}
+
+TASK [Backup NEXUS with cli_command] *******************************************************************************************************
+ok: [BLP02WTSACC]
+ok: [BLP01WTSACC]
+ok: [SPN02WTSACC]
+ok: [SPN01WTSACC]
+
+TASK [Save output to etc/ansible/backups/] *************************************************************************************************
+changed: [SPN01WTSACC]
+changed: [BLP01WTSACC]
+changed: [BLP02WTSACC]
+changed: [SPN02WTSACC]
+
+PLAY [NXOS-TAC] ****************************************************************************************************************************
+
+TASK [Save configuration] ******************************************************************************************************************
+ok: [DCR04WTSACC]
+ok: [DSW03VCSII01WT]
+ok: [DSW07VCSII01WT]
+ok: [DCR41WTSACC-CPE]
+ok: [BLP01WTSCCC]
+ok: [BLP02WTSCCC]
+ok: [DCR42WTSCACC-FG1-IDFC]
+ok: [DSW43WTSACC-FG1-SR12]
+ok: [DSW48WTSACC-FG1-SR22]
+ok: [DSW12VCSII02WT]
+ok: [FGI04WTDSW01-R&D]
+ok: [DCR03WTSCCC]
+ok: [ELF01WTSACC]
+ok: [ELF02WTSACC]
+ok: [FGI04WTDSW05-SIT]
+ok: [FGI04WTDSW06-SIT]
+ok: [DSW44WTSACC-FG1-SR4]
+ok: [FGI04WTDSW07-SIT]
+ok: [FLP03WTSACC]
+ok: [LFS01WTSACC]
+ok: [LFS04WTSACC]
+ok: [LFS02WTSACC]
+ok: [LFS05WTSACC]
+ok: [FLP04WTSACC]
+ok: [LFS03WTSACC]
+ok: [NGSP02WTSACC]
+ok: [LFS08WTSACC]
+ok: [NGSP01WTSACC]
+ok: [LFS06WTSACC]
+ok: [LFS07WTSACC]
+ok: [ToR02WTSACC]
+ok: [ToR01WTSACC]
+ok: [ToR05WTSACC]
+ok: [ToR06WTSACC]
+ok: [SPN02WTSACC]
+ok: [FLP02WTSCCC]
+ok: [FLP01WTSCCC]
+fatal: [DCR09WTSACC]: FAILED! => {"changed": false, "msg": "timed out"}
+fatal: [DCR10WTSACC]: FAILED! => {"changed": false, "msg": "timed out"}
+fatal: [FGI04WTDSW08-RAN]: FAILED! => {"changed": false, "msg": "timed out"}
+
+TASK [Backup NEXUS with cli_command] *******************************************************************************************************
+ok: [BLP01WTSCCC]
+ok: [DCR41WTSACC-CPE]
+ok: [BLP02WTSCCC]
+ok: [DCR04WTSACC]
+ok: [DCR42WTSCACC-FG1-IDFC]
+ok: [DSW43WTSACC-FG1-SR12]
+ok: [DSW07VCSII01WT]
+ok: [DCR03WTSCCC]
+ok: [DSW03VCSII01WT]
+ok: [DSW12VCSII02WT]
+ok: [DSW48WTSACC-FG1-SR22]
+ok: [FGI04WTDSW01-R&D]
+ok: [DSW44WTSACC-FG1-SR4]
+ok: [FGI04WTDSW06-SIT]
+ok: [ELF02WTSACC]
+ok: [FGI04WTDSW07-SIT]
+ok: [ELF01WTSACC]
+ok: [FGI04WTDSW05-SIT]
+ok: [FLP02WTSCCC]
+ok: [FLP01WTSCCC]
+ok: [FLP03WTSACC]
+ok: [FLP04WTSACC]
+ok: [LFS01WTSACC]
+ok: [LFS02WTSACC]
+ok: [LFS03WTSACC]
+ok: [LFS04WTSACC]
+ok: [NGSP01WTSACC]
+ok: [LFS06WTSACC]
+ok: [LFS05WTSACC]
+ok: [LFS08WTSACC]
+ok: [ToR02WTSACC]
+ok: [LFS07WTSACC]
+ok: [ToR06WTSACC]
+ok: [NGSP02WTSACC]
+ok: [ToR01WTSACC]
+ok: [SPN02WTSACC]
+ok: [ToR05WTSACC]
+
+TASK [Save output to /etc/ansible/backup-tac/] *********************************************************************************************
+changed: [BLP02WTSCCC]
+changed: [DCR03WTSCCC]
+changed: [DSW07VCSII01WT]
+changed: [DSW03VCSII01WT]
+changed: [DCR42WTSCACC-FG1-IDFC]
+changed: [FLP03WTSACC]
+changed: [FLP04WTSACC]
+changed: [LFS01WTSACC]
+changed: [DSW48WTSACC-FG1-SR22]
+changed: [LFS05WTSACC]
+changed: [ELF02WTSACC]
+changed: [DSW44WTSACC-FG1-SR4]
+changed: [LFS07WTSACC]
+changed: [BLP01WTSCCC]
+changed: [NGSP02WTSACC]
+changed: [FGI04WTDSW01-R&D]
+changed: [DCR41WTSACC-CPE]
+changed: [DSW43WTSACC-FG1-SR12]
+changed: [FGI04WTDSW05-SIT]
+changed: [FGI04WTDSW07-SIT]
+changed: [FGI04WTDSW06-SIT]
+changed: [ELF01WTSACC]
+changed: [DCR04WTSACC]
+changed: [FLP02WTSCCC]
+changed: [LFS06WTSACC]
+changed: [LFS03WTSACC]
+changed: [LFS04WTSACC]
+changed: [LFS02WTSACC]
+changed: [DSW12VCSII02WT]
+changed: [LFS08WTSACC]
+changed: [FLP01WTSCCC]
+changed: [NGSP01WTSACC]
+changed: [ToR02WTSACC]
+changed: [SPN02WTSACC]
+changed: [ToR01WTSACC]
+changed: [ToR06WTSACC]
+changed: [ToR05WTSACC]
+
+PLAY [IOSSWITCHES] *************************************************************************************************************************
+
+TASK [Save-IOS-Configuration] **************************************************************************************************************
+changed: [VPN03WTSCCC]
+changed: [VPN04WTSCCC]
+fatal: [DSW42WTSACC]: FAILED! => {"changed": false, "msg": "Failed to authenticate: Authentication failed."}
+fatal: [DSW04WTSCCC]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [DSW41WTSACC]: FAILED! => {"changed": false, "msg": "timed out"}
+
+PLAY [IOSXR] *******************************************************************************************************************************
+
+TASK [Save Conguration] ********************************************************************************************************************
+changed: [BBR02WTSACC]
+changed: [BBR01WTSACC]
+changed: [DMK01WTSCCC]
+changed: [DMK02WTSCCC]
+
+TASK [Backup] ******************************************************************************************************************************
+ok: [DMK01WTSCCC]
+ok: [BBR01WTSACC]
+ok: [DMK02WTSCCC]
+ok: [BBR02WTSACC]
+
+TASK [Save output to etc/ansible/backups/] *************************************************************************************************
+changed: [DMK02WTSCCC]
+changed: [BBR01WTSACC]
+changed: [DMK01WTSCCC]
+changed: [BBR02WTSACC]
+
+PLAY [EXTREME] *****************************************************************************************************************************
+
+TASK [Backup] ******************************************************************************************************************************
+changed: [CHWTCNLAB-SLX-1B]
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ansible.module_utils.connection.ConnectionError: timed out
+fatal: [CHWTCNLAB-SLX-1A]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/home/admin/.ansible/tmp/ansible-local-32026691my0is9p/ansible-tmp-1666366542.9911888-3209596-198115508628387/AnsiballZ_exos_config.py\", line 102, in <module>\n    _ansiballz_main()\n  File \"/home/admin/.ansible/tmp/ansible-local-32026691my0is9p/ansible-tmp-1666366542.9911888-3209596-198115508628387/AnsiballZ_exos_config.py\", line 94, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/home/admin/.ansible/tmp/ansible-local-32026691my0is9p/ansible-tmp-1666366542.9911888-3209596-198115508628387/AnsiballZ_exos_config.py\", line 40, in invoke_module\n    runpy.run_module(mod_name='ansible.modules.network.exos.exos_config', init_globals=None, run_name='__main__', alter_sys=True)\n  File \"/usr/lib64/python3.6/runpy.py\", line 205, in run_module\n    return _run_module_code(code, init_globals, run_name, mod_spec)\n  File \"/usr/lib64/python3.6/runpy.py\", line 96, in _run_module_code\n    mod_name, mod_spec, pkg_name, script_name)\n  File \"/usr/lib64/python3.6/runpy.py\", line 85, in _run_code\n    exec(code, run_globals)\n  File \"/tmp/ansible_exos_config_payload_8q7vibsw/ansible_exos_config_payload.zip/ansible/modules/network/exos/exos_config.py\", line 438, in <module>\n  File \"/tmp/ansible_exos_config_payload_8q7vibsw/ansible_exos_config_payload.zip/ansible/modules/network/exos/exos_config.py\", line 337, in main\n  File \"/tmp/ansible_exos_config_payload_8q7vibsw/ansible_exos_config_payload.zip/ansible/module_utils/network/exos/exos.py\", line 177, in get_config\n  File \"/tmp/ansible_exos_config_payload_8q7vibsw/ansible_exos_config_payload.zip/ansible/module_utils/network/exos/exos.py\", line 164, in get_connection\n  File \"/tmp/ansible_exos_config_payload_8q7vibsw/ansible_exos_config_payload.zip/ansible/module_utils/connection.py\", line 190, in __rpc__\nansible.module_utils.connection.ConnectionError: timed out\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}
+
+PLAY [JUNOS] *******************************************************************************************************************************
+
+TASK [BackupJUNOS] *************************************************************************************************************************
+fatal: [MFW01WTSACC]: FAILED! => {"changed": false, "msg": "Failed to import the required Python library (ncclient) on ans01wtsccc's Python /usr/bin/python3.6. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter: No module named 'ncclient'"}
+
+PLAY RECAP *********************************************************************************************************************************
+BBR01WTSACC                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+BBR02WTSACC                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+BLP01WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+BLP01WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+BLP02WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+BLP02WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+CHWTCNLAB-SLX-1A           : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+CHWTCNLAB-SLX-1B           : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCL03WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCL04WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCL06WTSCCC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DCR03WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR04WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR05WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR06WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR07WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR08WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR09WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DCR10WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DCR31WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR41WTSACC-CPE            : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DCR42WTSCACC-FG1-IDFC      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DMK01WTSCCC                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DMK02WTSCCC                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW01WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW01WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW02WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW03VCSII01WT             : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW04WTSCCC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DSW07VCSII01WT             : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW09WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW12VCSII02WT             : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW12WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW13WTSCCC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DSW14WTSCCC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DSW31WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW32WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW33WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW34WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW35WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW36WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW37WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW38WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW39WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW41WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DSW42WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+DSW43WTSACC-FG1-SR12       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW44WTSACC-FG1-SR4        : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSW48WTSACC-FG1-SR22       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DSWEIDFWTSCCC              : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DTR09WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+DTR10WTSCCC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ELF01WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ELF02WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ELP01WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ELP02WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FGI04WTDSW01-R&D           : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FGI04WTDSW05-SIT           : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FGI04WTDSW06-SIT           : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FGI04WTDSW07-SIT           : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FGI04WTDSW08-RAN           : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+FLP01WTSCCC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FLP02WTSCCC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FLP03WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+FLP04WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS01WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS02WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS03WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS04WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS05WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS06WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS07WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+LFS08WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+MFW01WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+NGSP01WTSACC               : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+NGSP02WTSACC               : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SPN01WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SPN02WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SSR01WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+SSR02WTSACC                : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ToR01WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ToR02WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ToR03WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+ToR04WTSACC                : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+ToR05WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ToR06WTSACC                : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VPN03WTSCCC                : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VPN04WTSCCC                : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+localhost                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[admin@ans01wtsccc ansible]$ 

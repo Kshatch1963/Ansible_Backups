@@ -1,0 +1,54 @@
+## Playbook to get system time and append it to backup files
+
+- hosts: localhost
+  tasks:
+   - name: Get ansible date/time facts
+     setup:
+       filter: "ansible_date_time"
+       gather_subset: "!all"
+
+   - name: Store DTG as fact
+     set_fact:
+       DTG: "{{ ansible_date_time.time }}"
+
+   - local_action: command mkdir -p /etc/ansible/backups/{{hostvars.localhost.DTG}}
+
+   - local_action: command mkdir -p /etc/ansible/backup-tac/{{hostvars.localhost.DTG}} 
+
+- hosts: IOSXR_TAC
+
+  tasks:
+   - name: Save Conguration
+     iosxr_config:
+       backup: yes
+
+   - name: Backup  
+     ios_command:
+       commands: show run  
+     register: config
+
+   - name: Save output to etc/ansible/backups/
+     copy:
+       content: "{{config.stdout[0]}}"
+       dest: "/etc/ansible/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}-config.txt"
+
+
+   - name: Copy ansible.log
+     connection: local
+     command: mv ./ansible.log ./logs/ansible-{{hostvars.localhost.DTG}}.txt
+     run_once: true
+
+
+   - name: Send E-Mail
+     mail:  
+       host: mail.chartercom.com
+       port: 25
+       subject: Ansible-report
+       body: Test
+       from: ansible_host@wcelab.charter.com
+       to:
+       - kevin <C-Kevin.Hatch@charter.com>
+       bcc: Kevin Hatch <kshatch1963@icloud.com>
+       attach: /etc/ansible/logs/ansible-{{hostvars.localhost.DTG}}.txt
+     delegate_to: localhost
+     run_once: True

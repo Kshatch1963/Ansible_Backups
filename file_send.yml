@@ -1,0 +1,27 @@
+## Playbook to get system time and append it to backup files
+- hosts: localhost
+  gather_facts: yes
+
+  tasks:
+   - name: Copy ansible.log
+     connection: local
+     command: mv ./ansible.log ./logs/playbook-{{ ansible_date_time.date }}.txt
+     run_once: true
+
+   - name: Send E-Mail
+     mail:
+       host: mail.chartercom.com
+       port: 25
+       subject: Ansible-Device-Backup-Report
+       body: See attached file
+       from: ansible_host@wcelab.chartercom.com
+       to:
+       - Krishna <Krishna.Gankidi@charter.com>
+       - kevin <C-Kevin.Hatch@charter.com>
+       - Chris <Chris.Chase@charter.com>
+       - Janath <JanathKumar.Madhamanchi@charter.com>
+       - Tharun <TharunKumar.Selvan@charter.com>
+       - Ananthanadh <C-Ananthanadh.Chilla@charter.com>
+       attach:
+       - /etc/ansible/logs/playbook-{{ ansible_date_time.date }}.txt       
+     delegate_to: localhost 
